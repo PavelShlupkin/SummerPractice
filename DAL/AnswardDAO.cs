@@ -116,29 +116,22 @@ namespace DAL
             {
                 var cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "RemoveAnsward";
+                cmd.CommandText = "deleteAnsward";
                 cmd.Parameters.AddWithValue(@"ID", ID);
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public void UpdateAnsward(Answard value)
+        public void UpdateAnsward(int ID, string Title)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "UpdateAnsward";
-                cmd.Parameters.AddWithValue(@"oldname", value.Title);
-                cmd.Parameters.AddWithValue(@"name", value.Title);
-                var id = new SqlParameter
-                {
-                    DbType = DbType.Int32,
-                    ParameterName = "@ID",
-                    Direction = ParameterDirection.Output
-                };
-                cmd.Parameters.Add(id);
+                cmd.Parameters.AddWithValue(@"ID", ID);
+                cmd.Parameters.AddWithValue(@"Title", Title);
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -169,14 +162,39 @@ namespace DAL
             return answards;
         }
 
-        public void findAnsward(string Title)
+        public IEnumerable<Answard> findAnsward(int ID_user, string Name)
+        {
+            List<Answard> answards = new List<Answard>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "findAnsward";
+                cmd.Parameters.AddWithValue(@"ID", ID_user);
+                cmd.Parameters.AddWithValue(@"Name", Name);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    answards.Add(new Answard
+                    {
+                        ID = (int)reader["ID"],
+                        ID_user = (int)reader["ID_user"],
+                        Title = (string)reader["Title"]
+                    });
+                }
+            }
+            return answards;
+        }
+
+        public void Delete(int ID)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "findTitle";
-                cmd.Parameters.AddWithValue(@"Title", Title);
+                cmd.CommandText = "deleteAnsward";
+                cmd.Parameters.AddWithValue(@"ID", ID);
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }

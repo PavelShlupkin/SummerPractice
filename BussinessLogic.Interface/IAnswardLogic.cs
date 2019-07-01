@@ -23,8 +23,10 @@ namespace BussinessLogic.Interface
 
         Answard GetByID(int ID);
 
-        void UpdateAnsward(Answard value);
+        void UpdateAnsward(int ID, string Title);
 
-        void findAnsward(string Title);
+        IEnumerable<Answard> findAnsward(int ID, string Name);
+
+        void Delete(int ID);
     }
 }

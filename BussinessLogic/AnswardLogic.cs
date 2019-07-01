@@ -41,9 +41,9 @@ namespace BussinessLogic
             answardDao.RemoveByID(ID);
         }
 
-        public void UpdateAnsward(Answard value)
+        public void UpdateAnsward(int ID, string Title)
         {
-            answardDao.UpdateAnsward(value);
+            answardDao.UpdateAnsward(ID, Title);
         }
 
         public IEnumerable<Answard> GetUserAnsward(int ID_user)
@@ -51,10 +51,14 @@ namespace BussinessLogic
             return (IEnumerable<Answard>)answardDao.GetUserAnsward(ID_user);
         }
 
-        public void findAnsward(string Answard)
+        public IEnumerable<Answard> findAnsward(int ID, string Name)
         {
-            answardDao.findAnsward(Answard);
+            return answardDao.findAnsward(ID, Name);
         }
 
+        public void Delete(int ID)
+        {
+            answardDao.Delete(ID);
+        }
     }
 }

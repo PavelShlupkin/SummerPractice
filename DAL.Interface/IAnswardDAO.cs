@@ -21,10 +21,11 @@ namespace DAL.Interface
 
         Answard GetByID(int ID);
 
-        void UpdateAnsward(Answard value);
+        void UpdateAnsward(int ID, string Title);
 
         IEnumerable<Answard> GetUserAnsward(int ID_user);
 
-        void findAnsward(string Title);
+        void Delete(int ID);
+        IEnumerable<Answard> findAnsward(int ID, string Name);
     }
 }
