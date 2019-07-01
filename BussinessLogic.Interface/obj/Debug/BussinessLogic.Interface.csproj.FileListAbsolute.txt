@@ -1,0 +1,11 @@
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\BussinessLogic.Interface.exe.config
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\BussinessLogic.Interface.exe
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\BussinessLogic.Interface.pdb
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\Entities.exe
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\Entities.pdb
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\bin\Debug\Entities.exe.config
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\obj\Debug\BussinessLogic.Interface.csprojAssemblyReference.cache
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\obj\Debug\BussinessLogic.Interface.csproj.CoreCompileInputs.cache
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\obj\Debug\BussinessLogic.Interface.csproj.CopyComplete
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\obj\Debug\BussinessLogic.Interface.exe
+C:\Users\ROG\source\repos\t3\BussinessLogic.Interface\obj\Debug\BussinessLogic.Interface.pdb

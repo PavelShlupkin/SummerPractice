@@ -1,0 +1,11 @@
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\DAL.Interface.exe.config
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\DAL.Interface.exe
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\DAL.Interface.pdb
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\Entities.exe
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\Entities.pdb
+C:\Users\ROG\source\repos\t3\DAL.Interface\bin\Debug\Entities.exe.config
+C:\Users\ROG\source\repos\t3\DAL.Interface\obj\Debug\DAL.Interface.csprojAssemblyReference.cache
+C:\Users\ROG\source\repos\t3\DAL.Interface\obj\Debug\DAL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\ROG\source\repos\t3\DAL.Interface\obj\Debug\DAL.Interface.csproj.CopyComplete
+C:\Users\ROG\source\repos\t3\DAL.Interface\obj\Debug\DAL.Interface.exe
+C:\Users\ROG\source\repos\t3\DAL.Interface\obj\Debug\DAL.Interface.pdb
