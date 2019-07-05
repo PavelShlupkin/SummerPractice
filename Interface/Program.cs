@@ -26,16 +26,16 @@ namespace Interface
 
             Authorization();
         }
-           
 
 
-       
-      
- public static void Authorization()
-{
-    Console.Clear();
-    Console.WriteLine("Выберите действие: \n 1.Войти \n 2.Регистрация");
-    switch (Console.ReadLine())
+
+
+
+        public static void Authorization()
+        {
+            Console.Clear();
+            Console.WriteLine("Выберите действие: \n 1.Войти \n 2.Регистрация");
+            switch (Console.ReadLine())
             {
                 case "1":
                     Console.WriteLine("Введите логин:");
@@ -45,7 +45,7 @@ namespace Interface
                     userLogic.Authorization(Login, Password);
                     ID = userLogic.FindForLogin(Login);
                     authorization = true;
-                    Menu();
+                    Check();
                     break;
                 case "2":
                     Console.WriteLine("Введите имя:");
@@ -64,28 +64,36 @@ namespace Interface
                     break;
             }
         }
-public static void Menu()
-{
-    Console.Clear();
-    Console.WriteLine("Выберите действие: \n 1.Посмотреть профиль \n 2.Посмотреть достижения \n 3.Выйти");
-    switch (Console.ReadLine())
-    {
-        case "1":
-            Console.Clear();
-             Console.WriteLine(userLogic.GetByID(ID));
-            Back();
-            break;
-        case "2":
-            Answards();
-            break;
-        case "3":
-            Authorization();
-            authorization = false;
-            break;
-    }
-}
 
-public static void checkLogin(ref string login)
+        public static void Check()
+        {
+            if (authorization)
+            {
+                Menu();
+            }
+        }
+        public static void Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("Выберите действие: \n 1.Посмотреть профиль \n 2.Посмотреть достижения \n 3.Выйти");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.Clear();
+                    Console.WriteLine(userLogic.GetByID(ID));
+                    Back();
+                    break;
+                case "2":
+                    Answards();
+                    break;
+                case "3":
+                    Authorization();
+                    authorization = false;
+                    break;
+            }
+        }
+
+        public static void checkLogin(ref string login)
         {
             if (!(userLogic.FindForLogin(login) < 1))
             {
@@ -95,16 +103,16 @@ public static void checkLogin(ref string login)
                 checkLogin(ref login);
             }
         }
-public static void Back()
-{
-    Console.WriteLine("0.Назад");
-    switch (Console.ReadLine())
-    {
-        case "0":
-            Menu();
-            break;
-    }
-}
+        public static void Back()
+        {
+            Console.WriteLine("0.Назад");
+            switch (Console.ReadLine())
+            {
+                case "0":
+                    Menu();
+                    break;
+            }
+        }
         public static void Answards()
         {
             Console.Clear();
@@ -116,10 +124,21 @@ public static void Back()
             }
             Console.WriteLine("0.Назад");
             Console.WriteLine("-1.Поиск");
+            Console.WriteLine("-2.Добавить достижение");
             int j = int.Parse(Console.ReadLine());
-            if (j == 0) Menu();
-            if (j == -1) FindAnsward();
-           AnswardProfile(list.ElementAt(j - 1));
+            switch (j)
+            {
+                case 0:
+                    Menu();
+                    break;
+                case -1:
+                    FindAnsward();
+                    break;
+                case -2:
+                    AddAnsward();
+                    break;
+            }
+            if (j > 0) AnswardProfile(list.ElementAt(j - 1)); else Answards();
         }
 
         public static void FindAnsward()
@@ -134,7 +153,18 @@ public static void Back()
                 Console.WriteLine($"{i + 1}. Название: {list.ElementAt(i).Title}");
             }
             int j = int.Parse(Console.ReadLine());
-           AnswardProfile(list.ElementAt(j - 1));
+            AnswardProfile(list.ElementAt(j - 1));
+        }
+
+        public static void AddAnsward()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите название:");
+            string title = Console.ReadLine();
+
+
+            answardLogic.Add(new Answard(ID, title));
+            Answards();
         }
 
         public static void AnswardProfile(Answard answard)

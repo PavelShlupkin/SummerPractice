@@ -14,9 +14,9 @@ namespace Entities
       
         public Answard()
         { }
-        public Answard(int id, int id_user, string title)
+        public Answard( int id_user, string title)
         {
-            ID = id;
+            
             ID_user = id_user;
             Title = title;
         }
