@@ -51,9 +51,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic.Interface\BussinessLogic.Interface.csproj">
+      <Project>{85b67e28-7684-4f1c-8901-cb7c1b92bbb5}</Project>
+      <Name>BussinessLogic.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
       <Project>{897c92a9-573b-41e5-b941-47ed4c6cb5f5}</Project>
       <Name>BussinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\DependencyInjection.csproj">
+      <Project>{076f780d-6293-4adb-8f1c-b5c6e0156b1f}</Project>
+      <Name>DependencyInjection</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{25e807d0-bfe8-4a56-8328-8bb16553be16}</Project>

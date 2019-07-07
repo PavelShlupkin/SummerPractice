@@ -21,3 +21,5 @@ C:\Users\ROG\source\repos\t3\Interface\bin\Debug\DAL.Interface.exe.config
 C:\Users\ROG\source\repos\t3\Interface\obj\Debug\Interface.csproj.CopyComplete
 C:\Users\ROG\source\repos\t3\Interface\obj\Debug\Interface.exe
 C:\Users\ROG\source\repos\t3\Interface\obj\Debug\Interface.pdb
+C:\Users\ROG\source\repos\t3\Interface\bin\Debug\ClassLibrary1.dll
+C:\Users\ROG\source\repos\t3\Interface\bin\Debug\ClassLibrary1.pdb

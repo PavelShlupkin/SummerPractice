@@ -13,6 +13,10 @@ namespace DAL
     public class AnswardDAO:IAnswardDAO
     {
         private string _connectionString = @"Data Source=DESKTOP-VAAPLAB;Initial Catalog=task3;Integrated Security=True";
+        public AnswardDAO(String cntStr)
+        {
+            this._connectionString = cntStr;
+        }
         public void Add(Answard value)
         {
             using (var connection = new SqlConnection(_connectionString))

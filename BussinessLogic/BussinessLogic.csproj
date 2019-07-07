@@ -55,6 +55,10 @@
       <Project>{85b67e28-7684-4f1c-8901-cb7c1b92bbb5}</Project>
       <Name>BussinessLogic.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL.Interface\DAL.Interface.csproj">
+      <Project>{daf70bff-33a6-48d2-bc11-59aee617421e}</Project>
+      <Name>DAL.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{245b3032-4db2-4761-a141-cc54afb82a7a}</Project>
       <Name>DAL</Name>

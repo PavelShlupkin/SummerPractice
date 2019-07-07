@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 using Entities;
 using BussinessLogic.Interface;
 using DAL;
+using DAL.Interface;
 
 namespace BussinessLogic
 {
     public class AnswardLogic : IAnswardLogic
     {
-        private AnswardDAO answardDao = new AnswardDAO();
+        private IAnswardDAO answardDao;
+
+        public AnswardLogic(IAnswardDAO answardDao)
+        {
+            this.answardDao = answardDao;
+        }
         public void Add(Answard value)
         {
             answardDao.Add(value);

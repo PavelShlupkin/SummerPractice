@@ -14,7 +14,10 @@ namespace DAL
     {
         private string _connectionString = @"Data Source=DESKTOP-VAAPLAB;Initial Catalog=task3;Integrated Security=True";
 
-       
+        public UserDAO(String cntStr)
+        {
+            this._connectionString = cntStr;
+        }
         public void Add(User value)
         {
             using (var connection = new SqlConnection(_connectionString))

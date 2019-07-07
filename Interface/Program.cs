@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BussinessLogic.Interface;
+using DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +15,16 @@ namespace Interface
 {
     class Program
     {
-        static UserLogic userLogic = new UserLogic();
-        static AnswardLogic answardLogic = new AnswardLogic();
+        public static IUserLogic userLogic;
+        public static IAnswardLogic answardLogic;
 
         public static bool authorization;
         public static int ID;
 
         static void Main(string[] args)
         {
-
+            userLogic = DI.UserLogic;
+            answardLogic = DI.AnswardLogic;
             authorization = false;
 
             Authorization();

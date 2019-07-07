@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 using BussinessLogic.Interface;
 using Entities;
 using DAL;
+using DAL.Interface;
 
 namespace BussinessLogic
 {
     public class UserLogic:IUserLogic
     {
-        private UserDAO userDao = new UserDAO();
+        private IUserDao userDao;
+
+        public UserLogic(IUserDao UserDao)
+        {
+            this.userDao = UserDao;
+        }
         public void Add(User value)
         {
             userDao.Add(value);
